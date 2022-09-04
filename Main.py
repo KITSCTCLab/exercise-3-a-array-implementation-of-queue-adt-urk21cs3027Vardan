@@ -10,7 +10,7 @@ class Solution:
       """
 
     # Write your code here
-    def __init__ (self, size):
+    def __init__(self, size):
         """Inits Solution with stack, queue, size, top, front and rear.
         Arguments:
           size: An integer to set the size of stack and queue.
@@ -33,6 +33,29 @@ class Solution:
     def is_queue_empty(self):
         """
         Check whether the queue is empty.
+        Returns:
+          True if it is empty, else returns False.
+        """
+        return self.front == -1 or self.front > self.rear
+
+    def is_stack_full(self):
+        """
+        Check whether the stack is full.
+        Returns:
+          True if it is full, else returns False.
+        """
+        return self.top == self.size - 1
+
+    def is_queue_full(self):
+        """
+        Check whether the queue is full.
+        Returns:
+          True if it is full, else returns False.
+        """
+        return self.rear == self.size - 1
+
+    def push_character(self, character):
+        """
         Push the character to stack, if stack is not full.
         Arguments:
             character: A character that will be pushed to the stack.
@@ -106,26 +129,3 @@ if is_palindrome:
     print("The word, " + text + ", is a palindrome.")
 else:
     print("The word, " + text + ", is not a palindrome.")
-        Returns:
-          True if it is empty, else returns False.
-        """
-        return self.front == -1 or self.front > self.rear
-
-    def is_stack_full(self):
-        """
-        Check whether the stack is full.
-        Returns:
-          True if it is full, else returns False.
-        """
-        return self.top == self.size - 1
-
-    def is_queue_full(self):
-        """
-        Check whether the queue is full.
-        Returns:
-          True if it is full, else returns False.
-        """
-        return self.rear == self.size - 1
-
-    def push_character(self, character):
-        """
